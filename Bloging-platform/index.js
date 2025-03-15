@@ -1,10 +1,11 @@
 const express = require('express')
 const mongoose = require('mongoose');
 const Blog = require('./models/bloggingSchema');
+const cors = require('cors');
 const app = express()
 
 app.use(express.json());
-
+app.use(cors);
 
 app.listen(4000, () => {
     console.log('server is running on port 4000')
@@ -77,7 +78,7 @@ app.delete('deleteblog/:id', async (req,res)=>{
 
 
 
-mongoose.connect("mongodb+srv://2211cs010685:7u77wx6QETCAeZLl@backenddb.chtwd.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB")
+mongoose.connect("mongodb+srv://2211cs010685:2211cs010685@backenddb.chtwd.mongodb.net/?retryWrites=true&w=majority&appName=BackendDB")
 .then(() => {
     console.log("Connected to database!");
     
